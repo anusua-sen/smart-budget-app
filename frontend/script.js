@@ -76,6 +76,57 @@ async function clearBudgets() {
   }
 }
 
+async function computeSpend() {
+  const res = await fetch(`${API_BASE}/compute_spend`);
+  const data = await res.json();
+
+  const summaryContainer = document.getElementById("computeResult");
+  summaryContainer.innerHTML = ""; // Clear previous results
+
+  if (!data.summary || data.summary.length === 0) {
+    summaryContainer.innerHTML = "<p>No spending data available.</p>";
+    return;
+  }
+
+  let tableHTML = `
+    <table border="1" cellspacing="0" cellpadding="8" style="border-collapse:collapse; width:100%; text-align:center;">
+      <thead style="background:#4CAF50; color:white;">
+        <tr>
+          <th>Category</th>
+          <th>Spent (₹)</th>
+          <th>Budget (₹)</th>
+          <th>Remaining (₹)</th>
+          <th>% Spent</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  data.summary.forEach(item => {
+    let statusColor =
+      item.status === "overspent"
+        ? "red"
+        : item.status === "within budget"
+        ? "green"
+        : "gray";
+
+    tableHTML += `
+      <tr>
+        <td>${item.category}</td>
+        <td>${item.spent}</td>
+        <td>${item.budget_limit}</td>
+        <td>${item.remaining}</td>
+        <td>${item.spent_percent ? item.spent_percent + "%" : "-"}</td>
+        <td style="color:${statusColor}; font-weight:bold;">${item.status}</td>
+      </tr>
+    `;
+  });
+
+  tableHTML += "</tbody></table>";
+
+  summaryContainer.innerHTML = tableHTML;
+}
 
 
 // === Insights ===

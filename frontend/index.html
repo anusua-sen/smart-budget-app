@@ -82,12 +82,19 @@
       </div>
       <pre id="budgetList"></pre>
     </section>
+     
+    <section>
+      <h2>💰 Summary</h2>
+      <button onclick="computeSpend()">View Summary</button>
+      <div id="computeResult" style="margin-top:20px;"></div>
+    </section>
+
 
     <!-- Insights -->
     <section>
       <h3>Analytics & Insights</h3>
       <div class="actions">
-        <button onclick="fetchInsights()">View Summary</button>
+        <button onclick="fetchInsights()">View Categories Distribution</button>
         <button onclick="fetchAnalytics()">Advanced Analytics</button>
         <button onclick="downloadSummary()">Download Summary Report</button>
       </div>

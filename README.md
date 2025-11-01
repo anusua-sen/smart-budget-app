@@ -1,4 +1,4 @@
-\#🧠 Smart Budget \& Spending Tracker (AI-powered)
+<h1 align="center">🧠 <b>Smart Budget & Spending Tracker (AI-powered)</b></h1>
 
 
 

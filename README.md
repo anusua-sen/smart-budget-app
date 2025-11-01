@@ -20,7 +20,7 @@ A personal finance dashboard that helps you:
 
 
 
-\## 🚀 Features
+🚀 <b>Features</b>
 
 \- 🧾 Upload CSV transaction files
 
@@ -38,7 +38,7 @@ A personal finance dashboard that helps you:
 
 
 
-\## 🏗️ Tech Stack
+🏗️ <b>Tech Stack</b>
 
 \*\*Backend:\*\* FastAPI, SQLAlchemy, SQLite  
 
@@ -52,7 +52,7 @@ A personal finance dashboard that helps you:
 
 
 
-\## 🧩 How to Run
+🧩 <b>How to Run</b>
 
 ```bash
 

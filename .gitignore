@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.env.*
+
+*.sqlite3
+
+# FastAPI
+*.db
+*.log
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+*.lock
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
